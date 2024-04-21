@@ -8,6 +8,7 @@ import {
 import './index.css'
 import Root from './components/Root';
 import Home from './components/Home';
+import Phone from './components/Phone';
 
 const router = createBrowserRouter([
   {
@@ -16,9 +17,15 @@ const router = createBrowserRouter([
     children:[
       {
         path:"/",
-        element:<Home/>
+        element:<Home/>,
+        loader:()=>fetch('http://localhost:5000/phones')
       },
-      
+      {
+        path:"/phones/:id",
+        element:<Phone/>,
+        loader: ({params})=>fetch(`http://localhost:5000/phones/${params.id}`)
+      },
+
     ]
   },
 ]);

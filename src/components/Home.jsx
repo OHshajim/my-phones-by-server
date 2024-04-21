@@ -1,13 +1,10 @@
-import Footer from "./Footer";
-import Header from "./Header";
 import Phones from "./Phones";
 
 const Home = () => {
     return (
-        <div>
-            <Header/>
+        <div className="h-[90vh]  font-bold">
             <Phones/>
-            <Footer/>
+            
         </div>
     );
 };
